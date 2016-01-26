@@ -63,8 +63,9 @@
                                         <td>{{ $itemClient->getAttribute('second_name') != null ? $itemClient->getAttribute('second_name') : '-' }}</td>
                                         <td>
                                             <div class="pull-right">
-                                                <a class="btn btn-default" href="#"><i class="icon-pencil6"></i> Edit</a>
-                                                <a class="btn btn-default" href="{{ route('admin.clients.destroy') }}"><i class="icon-cross2"></i> Remove</a>
+                                                <a class="btn btn-default" href="scripts:void();"><i class="glyphicon glyphicon-envelope"></i> Send message</a>
+                                                <a class="btn btn-default" href="{{route('admin.clients.edit')}}"><i class="icon-pencil6"></i> Edit</a>
+                                                <a class="btn btn-default" href="{{route('admin.clients.destroy')}}"><i class="icon-cross2"></i> Remove</a>
                                             </div>
                                         </td>
 

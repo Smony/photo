@@ -74,28 +74,36 @@ Route::group(['prefix' => 'admin', 'namespace' => 'Admin'], function() {
             'as'    =>  'admin.clients.index'
         ]);
 
-        get('/clients/create', [
-            'uses' => 'ClientsController@create',
-            'as'   => 'admin.clients.create'
-        ]);
+            get('/clients/create', [
+                'uses' => 'ClientsController@create',
+                'as'   => 'admin.clients.create'
+            ]);
 
-        post('/clients/store', [
-            'uses'  =>  'ClientsController@store',
-            'as'    =>  'admin.clients.store'
-        ]);
+                post('/clients/store', [
+                    'uses'  =>  'ClientsController@store',
+                    'as'    =>  'admin.clients.store'
+                ]);
 
-        /*
+                    get('/clients/{user}/edit', [
+                        'uses' => 'ClientsController@edit',
+                        'as'   => 'admin.clients.edit'
+                    ]);
 
-        get('/clients/{id}/destroy', [
-            'uses'  =>  'ClientsController@destroy',
-            'as'    =>  'admin.clients.destroy'
-        ]);
-        */
+                        get('/clients/{user}/destroy', [
+                            'uses'  =>  'ClientsController@destroy',
+                            'as'    =>  'admin.clients.destroy'
+                        ]);
 
         // GET MASTERS
         get('/masters', [
             'uses' => 'MastersController@index',
             'as'   => 'admin.masters.index'
+        ]);
+
+        // GET ADMINISTRATORS
+        get('/administrators', [
+            'uses' => 'AdministratorsController@index',
+            'as'   => 'admin.administrators.index'
         ]);
 
 

@@ -2,8 +2,6 @@
 
 namespace App\Http\Controllers\Admin;
 
-use App\Models\PageItem;
-use App\Jobs\UploadPhoto;
 use App\Http\Controllers\Controller;
 
 use App\User;
@@ -20,7 +18,7 @@ class MastersController extends Controller
     }
 
     /**
-     * Mastees index page
+     * Masters index page
      *
      * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
      */
@@ -30,13 +28,9 @@ class MastersController extends Controller
         $getMasters = User::orderBy('id', 'ASC')
             ->whereIn('role', [3])->get();
 
-        #dd($usersAll);
-
-        return view('admin.clients.index', [
-            'getClients'    =>  $getMasters
+        return view('admin.masters.index', [
+            'getMasters'    =>  $getMasters
         ]);
-
-        #return view('admin.masters.index');
 
     }
 

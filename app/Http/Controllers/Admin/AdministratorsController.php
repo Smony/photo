@@ -8,30 +8,30 @@ use App\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
 
-class ClientsController extends Controller
+class AdministratorsController extends Controller
 {
     public function __construct()
     {
         return view()->share([
-            'activePage'    =>  'clients'
+            'activePage'    =>  'administrators'
         ]);
     }
 
     /**
-     * CLIENTS INDEX PAGE
+     * ADMINISTRATORS INDEX PAGE
      *
      * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
      */
     public function index()
     {
 
-        $getClients = User::orderBy('id', 'ASC')
-            ->whereIn('role', [1])->get();
+        $getAdministrators = User::orderBy('id', 'ASC')
+            ->whereIn('role', [2])->get();
 
         #dd($usersAll);
 
-        return view('admin.clients.index', [
-        'getClients'    =>  $getClients
+        return view('admin.administrators.index', [
+            'getAdministrators'    =>  $getAdministrators
 
         ]);
 

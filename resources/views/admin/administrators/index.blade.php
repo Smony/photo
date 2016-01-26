@@ -9,11 +9,11 @@
 
         <div class="breadcrumb-line">
             <ul class="breadcrumb">
-                <li><a href="{{ route('admin.masters.index') }}"><i class="glyphicon glyphicon-user position-left"></i> Masters</a></li>
+                <li><a href="{{ route('admin.administrators.index') }}"><i class="glyphicon glyphicon-user position-left"></i> Administrators</a></li>
             </ul>
 
             <ul class="breadcrumb-elements">
-                <li><a href="scripts:void();"><i class="glyphicon glyphicon-plus position-left"></i> Add new Master</a></li>
+                <li><a href="scripts:void();"><i class="glyphicon glyphicon-plus position-left"></i> Add new Administrator</a></li>
             </ul>
             <a class="breadcrumb-elements-toggle"><i class="icon-menu-open"></i></a></div>
     </div>
@@ -36,12 +36,12 @@
 
             <div class="panel panel-flat">
                 <div class="panel-heading">
-                    <h5 class="panel-title">Masters
-                        <a href="scripts:void();" class="btn btn-success pull-right" style="color: white">Add new Master</a>
+                    <h5 class="panel-title">Administrators
+                        <a href="scripts:void();" class="btn btn-success pull-right" style="color: white">Add new Administrator</a>
                     </h5>
                 </div>
 
-                @if(count($getMasters))
+                @if(count($getAdministrators))
                     <hr>
                     <div class="panel-body">
                         <div class="table-responsive">
@@ -56,11 +56,11 @@
                                 </thead>
                                 <tbody>
 
-                                @foreach($getMasters as $itemMaster)
+                                @foreach($getAdministrators as $itemAdministrators)
                                     <tr>
-                                        <td>{{ $itemMaster->getAttribute('username') != null ? mb_substr($itemMaster->getAttribute('username'), 0 ,25) : '-' }}</td>
-                                        <td>{{ $itemMaster->getAttribute('first_name') != null ? mb_substr($itemMaster->getAttribute('first_name'), 0 ,25) : '-' }}</td>
-                                        <td>{{ $itemMaster->getAttribute('second_name') != null ? $itemMaster->getAttribute('second_name') : '-' }}</td>
+                                        <td>{{ $itemAdministrators->getAttribute('username') != null ? mb_substr($itemAdministrators->getAttribute('username'), 0 ,25) : '-' }}</td>
+                                        <td>{{ $itemAdministrators->getAttribute('first_name') != null ? mb_substr($itemAdministrators->getAttribute('first_name'), 0 ,25) : '-' }}</td>
+                                        <td>{{ $itemAdministrators->getAttribute('second_name') != null ? $itemAdministrators->getAttribute('second_name') : '-' }}</td>
                                         <td>
                                             <div class="pull-right">
                                                 <a class="btn btn-default" href="scripts:void();"><i class="glyphicon glyphicon-envelope"></i> Send message</a>

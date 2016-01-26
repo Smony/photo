@@ -306,6 +306,7 @@
                                 <ul>
                                     <li class="{{ $activePage == 'clients' ? 'active' : '' }}"><a href="{{ route('admin.clients.index') }}" id="layout1">Clients</a></li>
                                     <li class="{{ $activePage == 'masters' ? 'active' : '' }}"><a href="{{ route('admin.masters.index') }}" id="layout1">Masters<span class="label bg-warning-400">new</span></a></li>
+                                    <li class="{{ $activePage == 'administrators' ? 'active' : '' }}"><a href="{{ route('admin.administrators.index') }}" id="layout1">Administrators</a></li>
 
                                     <li class="disabled"><a href="script:void();" id="layout5">Layout 5 <span class="label">Coming soon</span></a></li>
                                 </ul>
