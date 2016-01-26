@@ -327,7 +327,7 @@
             @yield('header')
 
             <!-- Content area -->
-            <div class="content" style="border:1px solid red;">
+            <div class="content">
 
                 <!-- Main charts -->
                 @yield('content')

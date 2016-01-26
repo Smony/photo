@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Admin;
 
+
 use App\Http\Controllers\Controller;
 
 use App\User;
@@ -24,19 +25,12 @@ class ClientsController extends Controller
      */
     public function index()
     {
-
         $getClients = User::orderBy('id', 'ASC')
             ->whereIn('role', [1])->get();
 
-        #dd($usersAll);
-
         return view('admin.clients.index', [
-        'getClients'    =>  $getClients
-
+            'getClients'    =>  $getClients
         ]);
-
-        #return view('admin.clients.index', $getClients);
-
     }
 
     /**
@@ -91,24 +85,24 @@ class ClientsController extends Controller
     /**
      * Edit User
      *
-     * @param User $user
+     * @param User $getClients
      * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
      */
-    public function edit(User $user)
+    public function edit(User $getClients)
     {
         return view('admin.clients.edit', [
-            'user' =>  $user
+            'getClients' =>  $getClients
         ]);
     }
 
     /**
      * Update user
      *
-     * @param User $user
+     * @param User $getClients
      * @param Request $request
      * @return $this|\Illuminate\Http\RedirectResponse|\Illuminate\Routing\Redirector
      */
-    public function update(User $user, Request $request)
+    public function update(User $getClients, Request $request)
     {
         $rules = [
             'username'          =>  'max:255',
@@ -122,14 +116,14 @@ class ClientsController extends Controller
         if ($validator->fails()) {
 
             return redirect(route('admin.clients.edit', [
-                'user' =>  $user
+                'getClients' =>  $getClients
             ]))
                 ->withInput()
                 ->withErrors($validator->messages());
         }
 
 
-        $user->update([
+        $getClients->update([
             'username' => $request->get('username'),
             'first_name' => $request->get('first_name'),
             'second_name' => $request->get('second_name'),
@@ -143,14 +137,14 @@ class ClientsController extends Controller
     /**
      * Destroy user
      *
-     * @param User $user
+     * @param User $getClients
      * @return \Illuminate\Http\RedirectResponse
      * @throws \Exception
      */
-    public function destroy(User $user)
+    public function destroy(User $getClients)
     {
 
-        $user->delete();
+        $getClients->delete();
 
         return redirect(route('admin.clients.index'))
             ->with('message', 'User was successfully removed.');
