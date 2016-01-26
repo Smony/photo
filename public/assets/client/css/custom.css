@@ -1,0 +1,53 @@
+#PURCHASE_LINK{
+    display: inline-block;
+    padding: 5px 20px;
+    margin-bottom: 0;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 1;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: middle;
+    background-image: none;
+    border-radius: 20px;
+
+    color: #737373;
+    background-color: white;
+    outline: none;
+    border: 1px solid;
+    border-color: #737373;
+}
+
+#PURCHASE_LINK:hover,
+#PURCHASE_LINK:active,
+#PURCHASE_LINK:focus{
+    color: white ;
+    border-color: black ;
+    outline: none ;
+    text-decoration: none;
+    background-color: black;
+}
+
+.image-with-text {
+    position: relative;
+    width: 100%; /* for IE 6 */
+}
+
+.image-with-text h1 {
+    background-color: white;
+    position: absolute;
+    top: 75%;
+    max-width: 40%;
+    word-wrap: break-word;
+    left: 10%;
+    font-size: 300%;
+    text-align: center;
+}
+
+.btn-auth-group {
+    color: black;
+}
+
+.btn-auth-group:hover {
+    color: white;
+}

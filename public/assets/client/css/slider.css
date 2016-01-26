@@ -1,0 +1,27 @@
+.carousel {
+    position: relative;
+    text-align: -webkit-center;
+}
+
+.carousel-control.left,
+.carousel-control.right{
+	background-image: none;
+}
+
+ 
+.carousel-control>.glyphicon-chevron-left,
+.carousel-control>.glyphicon-chevron-right,
+.carousel-control>.icon-next,
+.carousel-control.icon-prev,
+.carousel-indicators{
+	opacity: 0;
+}
+
+#carousel:hover .carousel-control>.glyphicon-chevron-left,
+#carousel:hover .carousel-control>.glyphicon-chevron-right,
+#carousel:hover .carousel-control>.icon-next,
+#carousel:hover .carousel-control.icon-prev,
+#carousel:hover .carousel-indicators{
+	opacity: 1;
+}
+

@@ -1,0 +1,321 @@
+@media  (min-width : 200px) and (max-width : 320px) {
+	#logo,
+	#bar,
+	#hidden_on_touch_screen{
+		display: none;
+	}
+
+	.navbar,
+	.navbar-default,
+	.navbar{
+		margin-bottom: 0;
+	}
+
+	.navbar-brand{
+		display: inherit !important;
+	}
+}
+
+@media  (min-width : 321px) and (max-width : 374px) {
+	#logo,
+	#bar,
+	#hidden_on_touch_screen{
+		display: none;
+	}
+
+	.navbar,
+	.navbar-default,
+	.navbar{
+		margin-bottom: 0;
+	}
+
+	.navbar-brand{
+		display: inherit !important;
+	}
+}
+
+@media  (min-width : 375px) and (max-width : 767px) {
+	#logo,
+	#bar,
+	#hidden_on_touch_screen{
+		display: none;
+	}
+
+	.navbar-brand{
+		display: inherit !important;
+	}
+
+	.navbar,
+	.navbar-default,
+	.navbar{
+		margin-bottom: 0;
+	}
+}
+
+@media  (min-width : 768px) and (max-width : 991px) {
+
+	#hidden_on_touch_screen{
+		display: none;
+	}
+
+	#bar_width{
+		margin: 0 auto !important;
+	}
+
+	.navbar,
+	.navbar-default,
+	.navbar{
+		margin-bottom: 0;
+	}
+
+
+	.navbar-nav>li>a {
+		padding-top: 15px;
+		padding-bottom: 15px;
+		padding-left: 3px;
+		padding-right: 3px;
+		display: inline-flex;
+	}
+
+	.navbar-nav>li {
+		padding: 0;
+		display: inline-flex;
+	}
+
+	.nav {
+		display: inline-flex;
+	}
+
+}
+
+@media  (min-width : 992px) and (max-width : 1199px) {
+
+	#hidden_on_touch_screen{
+		display: none;
+	}
+
+	#bar_width{
+		margin: 0 auto !important;
+	}
+
+	.nav {
+		margin-bottom: 0px;
+		list-style: none;
+		display: inline-flex;
+	}
+
+	#wider_on_the_PC,
+	#hidden_on_touch_screen{
+		padding-left: 2vw;
+
+	}
+
+
+}
+
+@media  (min-width : 1200px) and (max-width : 1366px)  {
+
+	.nav {
+		margin-bottom: 0px;
+		list-style: none;
+		display: inline-flex;
+	}
+
+	#wider_on_the_PC,
+	#hidden_on_touch_screen{
+		padding-left: 2vw;
+
+	}
+}
+
+@media  (min-width : 1367px) {
+	.nav {
+		/*padding-left: 25.2%;*/
+	}
+
+	.navbar-brand{
+		display: none;
+	}
+
+	.nav {
+		margin-bottom: 0px;
+		list-style: none;
+		display: inline-flex;
+	}
+
+	#wider_on_the_PC,
+	#hidden_on_touch_screen{
+		padding-left: 2vw;
+
+	}
+}
+
+.navbar-brand{
+	display: none;
+}
+
+.navbar-default .navbar-brand:hover {
+	color: white;
+	background-color: black;
+}
+
+.navbar-default .navbar-brand {
+	color: white;
+	background-color: black;
+}
+
+.navbar-default .navbar-toggle:focus,
+.navbar-default .navbar-toggle:hover {
+	background-color: white;
+	border: 0;
+	border-radius: 0;
+}
+
+.navbar-default .navbar-toggle .icon-bar {
+	background-color: black;
+}
+
+.navbar-default {
+	background-color: white;
+	border: 0 white solid;
+}
+
+.nav {
+	margin-bottom: 0px;
+	list-style: none;
+	float: none;
+}
+
+.navbar-default .navbar-toggle {
+	border-color: black;
+}
+
+.navbar-toggle:focus {
+	outline: 0;
+}
+
+.navbar-toggle {
+	position: relative;
+	float: left;
+	padding: 9px 10px;
+	margin-top: 7px;
+	margin-right: 15px;
+	margin-bottom: 8px;
+	background-color: transparent;
+	background-image: none;
+	border: 0;
+	border-radius: 0;
+	outline: 0;
+}
+/*
+li{
+	padding: 0;
+	display:inline-block;
+}
+*/
+.navbar.navbar-collapse {
+	max-height: 100%;
+}
+
+#bar{
+	color: black;
+	background-color: white;
+	border-radius: 0;
+	border-color: white;
+	outline: none;
+
+	margin-top: 8px;
+}
+
+#bar:hover,
+#bar:active{
+	color: white;
+	background-color: black;
+	border-radius: 0;
+	border-color: black;
+	outline: none;
+	text-decoration: none;
+}
+
+#navigate{
+	color: black;
+	background-color: white;
+	border-radius: 0;
+	border-color: white;
+	outline: none;
+	/*font-size: 0.75vw;*/
+	margin-top: 13px;
+}
+
+#navigate:hover,
+#navigate:active{
+	color: white;
+	background-color: black;
+	border-radius: 200px;
+	border-color: black;
+	outline: none;
+	text-decoration: none;
+}
+
+body{
+	text-align: center;
+}
+
+a,
+a:link,
+a:visited,
+a:hover,
+a:active,
+a:focus{
+	text-decoration: none;
+	padding: 0;
+	margin: 0 auto;
+
+}
+
+.btn-default{
+	display: inline-block;
+	padding: 5px 20px;
+	margin-bottom: 0;
+	font-size: 14px;
+	font-weight: 400;
+	line-height: 1;
+	text-align: center;
+	white-space: nowrap;
+	vertical-align: middle;
+	background-image: none;
+	border: 0;
+	border-radius: 20px;
+	background-color: white;
+	border-color: black;
+}
+
+#logo{
+	color: white;
+	background-color: black;
+	border-radius: 0;
+	border-color: black;
+	outline: none;
+}
+
+.btn-info,
+.btn-sucsess,
+.btn-info:hover,
+.btn-sucsess:hover,
+.btn-info:active,
+.btn-sucsess:active,
+.btn-info:visited,
+.btn-sucsess:visited{
+	color: white;
+	background-color: black;
+	border-color: black;
+}
+
+#logo:hover,
+#logo:active{
+	color: black;
+	background-color: white;
+	border-radius: 0;
+	border-color: black;
+	outline: none;
+}

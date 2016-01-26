@@ -1,0 +1,106 @@
+@media  (min-width : 200px) and (max-width : 320px) { 
+	
+}
+
+@media  (min-width : 321px) and (max-width : 374px) { 
+	
+}
+
+@media  (min-width : 375px) and (max-width : 767px) { 
+	
+}
+
+@media  (min-width : 768px) and (max-width : 991px) { 
+	
+    
+}
+
+@media  (min-width : 992px) and (max-width : 1199px) { 
+	
+    
+}
+
+@media  (min-width : 1200px) and (max-width : 1366px)  { 
+	
+}
+
+@media  (min-width : 1367px) { 
+	
+}
+
+
+.container-fluid{
+	padding-left: 0px;
+    padding-right: 0px;
+	border: 0;
+	border-radius: 0;
+	font-family: Source Sans Pro;
+}
+
+.navbar-default {
+    background-color: white;
+    border-color: white;
+	border: 0;
+    border-radius: 0;
+}
+
+.navbar-default .navbar-toggle {
+    border: 0;
+    border-radius: 0;
+	color: black;
+}
+
+.navbar-default
+ .navbar-brand {
+	font:  800 25pt Source Sans Pro;
+	float: left;
+    height: 50px;
+	width: 50px;
+    padding: 0;
+    border: 0;
+    border-radius: 0;
+    color: white;
+	background-color: black;
+	padding-left: 12px;
+    padding-top: 2px;	
+}
+
+.navbar-default .navbar-brand:hover,
+.navbar-default .navbar-brand:focus {
+	color: white;
+	background-color: black;
+}
+
+.navbar{ 
+	margin-bottom: 0px;
+}
+
+.navbar-default .navbar-nav>li>a {
+    color: black;
+}
+
+.navbar-default .navbar-nav>li>a:hover,
+.navbar-default .navbar-nav>li>a:focus {
+    color: white;
+	background-color: black;
+}
+
+.circle_background{
+	margin: top right;
+}
+
+.HELI_CREATIVE{
+	font:  200 3em Source Sans Pro;
+	letter-spacing: 15px;
+}
+
+.HELI_CREATIVE_DESIGN{
+	font-weight: 700;
+	letter-spacing: 10px;
+	
+}
+
+.work_is{
+	color: #707070;
+	letter-spacing: 3px;
+}

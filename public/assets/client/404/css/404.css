@@ -1,0 +1,82 @@
+@media  (min-width : 200px) and (max-width : 320px) { 
+	
+}
+
+@media  (min-width : 321px) and (max-width : 374px) { 
+	
+}
+
+@media  (min-width : 375px) and (max-width : 767px) { 
+	
+}
+
+@media  (min-width : 768px) and (max-width : 991px) { 
+	
+    
+}
+
+@media  (min-width : 992px) and (max-width : 1199px) { 
+	
+    
+}
+
+@media  (min-width : 1200px) and (max-width : 1366px)  { 
+	
+}
+
+@media  (min-width : 1367px) { 
+	
+}
+
+.bckg_image{
+	margin-top: 3vh;
+}
+
+.NOT_FOUND{
+	font-size: 4em;
+	font-weight: 200;
+	letter-spacing: 1.1vmin;
+}
+
+.PAGE{
+	font-weight: 800;
+}
+
+.Sorry{
+	font-size: 1.3em;
+	font-weight: 200;
+	color: #808080;
+}
+
+.error_code{
+	font-size: 8em;
+	font-weight: 800;
+	letter-spacing: 1.1vmin;
+}
+
+
+a.btn_bar ,
+a.btn_bar:link, 
+a.btn_bar:visited {
+	color: black;
+	border: 1px solid black;
+	border-radius: 30px;
+	background-color: white;
+	
+	text-decoration: none !important;
+	padding-top: 6px !important;
+    padding-bottom: 6px !important;
+    padding-left: 25px !important;
+    padding-right: 25px !important;
+    margin-left: 10px !important;
+    margin-right: 10px !important;
+}
+ 
+a.btn_bar:hover, 
+a.btn_bar:active,
+a.btn_bar:focus{
+	color: white;
+	border: 1px solid black;
+	border-radius: 30px;
+	background-color: black;
+}
