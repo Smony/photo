@@ -22,11 +22,10 @@ class MastersController extends Controller
      *
      * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
      */
-    public function index()
+    public function index(User $masters)
     {
 
-        $getMasters = User::orderBy('id', 'ASC')
-            ->whereIn('role', [3])->get();
+        $getMasters = $masters->getMastersAll();
 
         return view('admin.masters.index', [
             'getMasters'    =>  $getMasters

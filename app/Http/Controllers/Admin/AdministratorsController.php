@@ -22,20 +22,15 @@ class AdministratorsController extends Controller
      *
      * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
      */
-    public function index()
+    public function index(User $adm)
     {
 
-        $getAdministrators = User::orderBy('id', 'ASC')
-            ->whereIn('role', [2])->get();
-
-        #dd($usersAll);
+        $getAdministrators = $adm->getAdmAll();
 
         return view('admin.administrators.index', [
             'getAdministrators'    =>  $getAdministrators
-
         ]);
 
-        #return view('admin.clients.index', $getClients);
 
     }
 

@@ -24,12 +24,10 @@ class ClientsController extends Controller
      *
      * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
      */
-    public function index()
+    public function index(User $clients)
     {
-        $getClients = User::orderBy('id', 'ASC')
-            ->whereIn('role', [1])->get();
 
-
+        $getClients = $clients->getClientsAll();
 
         return view('admin.clients.index', [
             'getClients'    =>  $getClients

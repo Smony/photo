@@ -59,7 +59,42 @@ class User extends Model implements AuthenticatableContract,
         return $this->getAttribute('role') == self::ROLE_ADMIN;
     }
 
-    public function getCountClients(){
-        return User::count();
+    public function getClientsAll(){
+        $getClients =  User::OrderIdDesc()->Clients()->get();
+
+        return $getClients;
+    }
+    public function getMastersAll(){
+        $getMasters =  User::OrderIdDesc()->Masters()->get();
+
+        return $getMasters;
+    }
+
+    public function getAdmAll(){
+        $getAdministrators =  User::OrderIdDesc()->Administrators()->get();
+
+        return $getAdministrators;
+    }
+
+    //========================== SCOPES ==========================
+
+    public function scopeOrderIdAsc($query){
+        $query->orderBy('id', 'ASC');
+    }
+
+    public function scopeOrderIdDesc($query){
+        $query->orderBy('id', 'DESC');
+    }
+
+    public function scopeClients($query){
+        $query->where('role', User::ROLE_USER);
+    }
+
+    public function scopeMasters($query){
+        $query->where('role', User::ROLE_MASTER);
+    }
+
+    public function scopeAdministrators($query){
+        $query->where('role', User::ROLE_ADMIN);
     }
 }
