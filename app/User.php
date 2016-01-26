@@ -58,4 +58,8 @@ class User extends Model implements AuthenticatableContract,
     {
         return $this->getAttribute('role') == self::ROLE_ADMIN;
     }
+
+    public function getCountClients(){
+        return User::count();
+    }
 }

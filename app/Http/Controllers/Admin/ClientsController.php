@@ -9,6 +9,7 @@ use App\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
 
+
 class ClientsController extends Controller
 {
     public function __construct()
@@ -28,8 +29,11 @@ class ClientsController extends Controller
         $getClients = User::orderBy('id', 'ASC')
             ->whereIn('role', [1])->get();
 
+
+
         return view('admin.clients.index', [
             'getClients'    =>  $getClients
+
         ]);
     }
 
@@ -73,6 +77,7 @@ class ClientsController extends Controller
             'username' => $request->get('username'),
             'first_name' => $request->get('first_name'),
             'second_name' => $request->get('second_name'),
+            'role' => User::ROLE_USER,
             'email' => $request->get('email')
 
         ]);

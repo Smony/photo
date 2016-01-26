@@ -18,7 +18,7 @@
                 <li><a href="{{ route('admin.pageSlides.create') }}"><i class="icon-file-plus position-left"></i> Create new slide</a></li>
             </ul>
             <a class="breadcrumb-elements-toggle"><i class="icon-menu-open"></i></a></div>
-    </div>
+        </div>
 @endsection
 
 @section('content')

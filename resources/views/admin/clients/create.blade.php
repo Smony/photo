@@ -64,6 +64,7 @@
 
                         <div class="col-lg-9 col-lg-offset-3">
                             @include('admin.partials.errors')
+                            error
                         </div>
 
                         <div class="text-right">
