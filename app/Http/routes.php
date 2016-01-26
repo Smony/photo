@@ -84,10 +84,13 @@ Route::group(['prefix' => 'admin', 'namespace' => 'Admin'], function() {
             'as'    =>  'admin.clients.store'
         ]);
 
+        /*
+
         get('/clients/{id}/destroy', [
             'uses'  =>  'ClientsController@destroy',
             'as'    =>  'admin.clients.destroy'
         ]);
+        */
 
         // GET MASTERS
         get('/masters', [
