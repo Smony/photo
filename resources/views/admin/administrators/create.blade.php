@@ -10,21 +10,23 @@
 
         <div class="breadcrumb-line">
             <ul class="breadcrumb">
-                <li><a href="{{ route('admin.clients.index') }}"><i class="glyphicon glyphicon-user position-left"></i> Clients</a></li>
-                <li class="active">Edit</li>
+                <li><a href="{{ route('admin.administrators.index') }}"><i class="glyphicon glyphicon-user position-left"></i> Administrators</a></li>
+                <li class="active">Create</li>
             </ul>
 
             <ul class="breadcrumb-elements">
-                <li><a href="{{ route('admin.clients.create') }}"><i class="glyphicon glyphicon-plus position-left"></i> Create new user</a></li>
+                <li><a href="{{ route('admin.administrators.create') }}"><i class="glyphicon glyphicon-plus position-left"></i> Create new Administrator</a></li>
             </ul>
             <a class="breadcrumb-elements-toggle"><i class="icon-menu-open"></i></a></div>
     </div>
 @endsection
 
 @section('content')
-
-  edit client
-
+    <div class="row">
+        <div class="col-lg-12">
+            @include('admin.administrators._form')
+        </div>
+    </div>
 @endsection
 
 @section('scripts')

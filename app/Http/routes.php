@@ -113,6 +113,14 @@ Route::group(['prefix' => 'admin', 'namespace' => 'Admin'], function() {
             'uses' => 'AdministratorsController@index',
             'as'   => 'admin.administrators.index'
         ]);
+            get('/administrators/create', [
+                'uses' => 'AdministratorsController@create',
+                'as'   => 'admin.administrators.create'
+            ]);
+                post('/administrators/store', [
+                    'uses' => 'AdministratorsController@store',
+                    'as'   => 'admin.administrators.store'
+                ]);
 
 
 

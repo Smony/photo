@@ -35,29 +35,33 @@ class AdministratorsController extends Controller
     }
 
     /**
-     * CREATE CLIENTS PAGE
+     * CREATE ADMINISTRATOR PAGE
      *
      * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
      */
     public function create()
     {
-        return view('admin.clients.create');
+        return view('admin.administrators.create');
     }
 
     /**
-     * Store client user
-     *
+     * STORE ADMINISTRATOR USER
+     * @param User $userModel
      * @param Request $request
      * @return $this|\Illuminate\Http\RedirectResponse|\Illuminate\Routing\Redirector
      */
-    public function store(Request $request)
+    public function store(User $userModel, Request $request)
     {
 
+        //dd($request->all());
+        //$userModel->create($request->all());
+
         $rules = [
-            'username'          =>  'max:255',
-            'first_name'        =>  'max:255',
-            'second_name'       =>  'max:255',
-            'email'             =>  'max:255'
+            'username' => 'required|max:255|unique:users',
+            'first_name' => 'required|max:255',
+            'second_name' => 'required|max:255',
+            'email' => 'required|email|max:255|unique:users',
+            'password' => 'required|min:6'
         ];
 
         $validator = Validator::make($request->only(array_keys($rules)), $rules);
@@ -70,17 +74,20 @@ class AdministratorsController extends Controller
                 ->withErrors($validator->messages());
         }
 
-        User::create([
+        $userModel->create([
             'username' => $request->get('username'),
             'first_name' => $request->get('first_name'),
             'second_name' => $request->get('second_name'),
-            'email' => $request->get('email')
+            'role' => User::ROLE_ADMIN,
+            'email' => $request->get('email'),
+            'password' => bcrypt($request->get('password'))
+
 
         ]);
 
 
-        return redirect(route('admin.clients.index'))
-            ->with('message', 'User was successfully created.');
+        return redirect(route('admin.administrators.index'))
+            ->with('message', 'Administrator was successfully created.');
     }
 
     /**
