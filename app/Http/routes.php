@@ -99,6 +99,14 @@ Route::group(['prefix' => 'admin', 'namespace' => 'Admin'], function() {
             'uses' => 'MastersController@index',
             'as'   => 'admin.masters.index'
         ]);
+            get('/masters/create', [
+                'uses' => 'MastersController@create',
+                'as'   => 'admin.masters.create'
+            ]);
+                post('/masters/store', [
+                    'uses' => 'MastersController@store',
+                    'as'   => 'admin.masters.store'
+                ]);
 
         // GET ADMINISTRATORS
         get('/administrators', [

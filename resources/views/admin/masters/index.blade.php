@@ -13,7 +13,7 @@
             </ul>
 
             <ul class="breadcrumb-elements">
-                <li><a href="scripts:void();"><i class="glyphicon glyphicon-plus position-left"></i> Add new Master</a></li>
+                <li><a href="{{route('admin.masters.create')}}"><i class="glyphicon glyphicon-plus position-left"></i> Add new Master</a></li>
             </ul>
             <a class="breadcrumb-elements-toggle"><i class="icon-menu-open"></i></a></div>
     </div>
@@ -37,7 +37,7 @@
             <div class="panel panel-flat">
                 <div class="panel-heading">
                     <h5 class="panel-title">Masters
-                        <a href="scripts:void();" class="btn btn-success pull-right" style="color: white">Add new Master</a>
+                        <a href="{{route('admin.masters.create')}}" class="btn btn-success pull-right" style="color: white">Add new Master</a>
                     </h5>
                 </div>
 

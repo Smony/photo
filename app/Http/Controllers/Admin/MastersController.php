@@ -19,7 +19,7 @@ class MastersController extends Controller
 
     /**
      * Masters index page
-     *
+     * @param User $masters
      * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
      */
     public function index(User $masters)
@@ -34,28 +34,33 @@ class MastersController extends Controller
     }
 
     /**
-     * Create page-slides page
+     * Create user masters
      *
      * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
      */
     public function create()
     {
-        return view('admin.page-slides.create');
+        return view('admin.masters.create');
     }
 
     /**
-     * Store page-slides page
+     * Store user masters
      *
+     * @param User $userModel
      * @param Request $request
      * @return $this|\Illuminate\Http\RedirectResponse|\Illuminate\Routing\Redirector
      */
-    public function store(Request $request)
+    public function store(User $userModel, Request $request)
     {
+        //dd($request->all());
+        //$userModel->create($request->all());
+
         $rules = [
-            'title'             =>  'max:255',
-            'description'       =>  'max:255',
-            'ordinal_position'  =>  'numeric',
-            'slide_photo'       =>  'required|image'
+            'username' => 'required|max:255|unique:users',
+            'first_name' => 'required|max:255',
+            'second_name' => 'required|max:255',
+            'email' => 'required|email|max:255|unique:users',
+            'password' => 'required|min:6'
         ];
 
         $validator = Validator::make($request->only(array_keys($rules)), $rules);
@@ -68,18 +73,20 @@ class MastersController extends Controller
                 ->withErrors($validator->messages());
         }
 
-        $photoUrl = $this->dispatch(new UploadPhoto($request->file('slide_photo'), PageItem::PHOTO_SLIDES_FOLDER));
+        $userModel->create([
+            'username' => $request->get('username'),
+            'first_name' => $request->get('first_name'),
+            'second_name' => $request->get('second_name'),
+            'role' => User::ROLE_MASTER,
+            'email' => $request->get('email'),
+            'password' => bcrypt($request->get('password'))
 
-        PageItem::create([
-            'category_id'   =>  PageItem::PAGE_SLIDES_CATEGORY,
-            'title' =>  $request->get('title'),
-            'description' => $request->get('description'),
-            'ordinal_position'  =>  $request->get('ordinal_position'),
-            'photo_url'   =>  $photoUrl
+
         ]);
 
-        return redirect(route('admin.pageSlides.index'))
-            ->with('message', 'Slide photo was successfully created.');
+
+        return redirect(route('admin.masters.index'))
+            ->with('message', 'Master was successfully created.');
     }
 
     /**
