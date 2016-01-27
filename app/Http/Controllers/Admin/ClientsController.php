@@ -21,7 +21,7 @@ class ClientsController extends Controller
 
     /**
      * CLIENTS INDEX PAGE
-     *
+     * @param User $clients
      * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
      */
     public function index(User $clients)
@@ -48,17 +48,29 @@ class ClientsController extends Controller
     /**
      * Store client user
      *
+     * @param User $userModel
      * @param Request $request
      * @return $this|\Illuminate\Http\RedirectResponse|\Illuminate\Routing\Redirector
      */
-    public function store(Request $request)
+    public function store(User $userModel, Request $request)
     {
 
+
+        //dd($request->all());
+        //$userModel->create($request->all());
+
         $rules = [
+           /*
             'username'          =>  'max:255',
             'first_name'        =>  'max:255',
             'second_name'       =>  'max:255',
             'email'             =>  'max:255'
+          */
+            'username' => 'required|max:255|unique:users',
+            'first_name' => 'required|max:255',
+            'second_name' => 'required|max:255',
+            'email' => 'required|email|max:255|unique:users',
+            'password' => 'required|min:6'
         ];
 
         $validator = Validator::make($request->only(array_keys($rules)), $rules);
@@ -71,12 +83,14 @@ class ClientsController extends Controller
                 ->withErrors($validator->messages());
         }
 
-        User::create([
+        $userModel->create([
             'username' => $request->get('username'),
             'first_name' => $request->get('first_name'),
             'second_name' => $request->get('second_name'),
             'role' => User::ROLE_USER,
-            'email' => $request->get('email')
+            'email' => $request->get('email'),
+            'password' => bcrypt($request->get('password'))
+
 
         ]);
 
@@ -147,7 +161,9 @@ class ClientsController extends Controller
     public function destroy(User $getClients)
     {
 
-        $getClients->delete();
+        #$getClients->delete();
+
+        $getClients->deleteClient($getClients);
 
         return redirect(route('admin.clients.index'))
             ->with('message', 'User was successfully removed.');
