@@ -112,7 +112,19 @@ Route::group(['prefix' => 'admin', 'namespace' => 'Admin'], function() {
                     'uses' => 'MastersController@store',
                     'as'   => 'admin.masters.store'
                 ]);
-
+         /*           get('/masters/{getMasters}/edit', [
+                        'uses' => 'MastersController@edit',
+                        'as'   => 'admin.masters.edit'
+                    ]);
+                        post('/masters/{getMasters}/update', [
+                           'uses' => 'MastersController@update',
+                            'as'  => 'admin.masters.update'
+                        ]);
+                            get('/masters/{getMasters}/destroy', [
+                                'uses' => 'MastersController@destroy',
+                                'as'   => 'admin.masters.destroy'
+                            ]);
+        */
         // GET ADMINISTRATORS
         get('/administrators', [
             'uses' => 'AdministratorsController@index',
@@ -126,7 +138,19 @@ Route::group(['prefix' => 'admin', 'namespace' => 'Admin'], function() {
                     'uses' => 'AdministratorsController@store',
                     'as'   => 'admin.administrators.store'
                 ]);
-
+ /*                   get('/administrator/{getAdministrators}/edit', [
+                        'uses' => 'AdministratorsController@edit',
+                        'as'   => 'admin.administrators.edit'
+                    ]);
+                        post('/administrators/{getAdministrators}/update', [
+                            'uses' => 'AdministratorsController@update',
+                            'as'   => 'admin.administrators.update'
+                        ]);
+                            get('/administrators/{getAdministrators}/destroy', [
+                                'uses' => 'AdministratorsController@destroy',
+                                'as'   => 'admin.administrators.destroy'
+                            ]);
+*/
 
 
         //===================================================

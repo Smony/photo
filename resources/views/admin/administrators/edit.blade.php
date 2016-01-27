@@ -23,7 +23,7 @@
 
 @section('content')
 
-    12
+edit administration
 
 @endsection
 

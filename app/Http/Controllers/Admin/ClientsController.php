@@ -7,7 +7,6 @@ use App\Http\Controllers\Controller;
 
 use App\User;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Validator;
 
 
@@ -56,10 +55,6 @@ class ClientsController extends Controller
     public function store(User $userModel, Request $request)
     {
 
-
-        //dd($request->all());
-        //$userModel->create($request->all());
-
         $rules = [
             'username' => 'required|max:255|unique:users',
             'first_name' => 'required|max:255',
@@ -102,10 +97,13 @@ class ClientsController extends Controller
      */
     public function edit(User $getClients)
     {
+        #dd($getClients);
+
         return view('admin.clients.edit', [
-            'getClients' =>  $getClients
+            'getClients'    =>  $getClients
         ]);
     }
+
 
     /**
      * Update user
