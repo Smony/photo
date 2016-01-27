@@ -7,6 +7,7 @@ use App\Http\Controllers\Controller;
 
 use App\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Validator;
 
 
@@ -60,12 +61,6 @@ class ClientsController extends Controller
         //$userModel->create($request->all());
 
         $rules = [
-           /*
-            'username'          =>  'max:255',
-            'first_name'        =>  'max:255',
-            'second_name'       =>  'max:255',
-            'email'             =>  'max:255'
-          */
             'username' => 'required|max:255|unique:users',
             'first_name' => 'required|max:255',
             'second_name' => 'required|max:255',
@@ -121,11 +116,13 @@ class ClientsController extends Controller
      */
     public function update(User $getClients, Request $request)
     {
+
         $rules = [
-            'username'          =>  'max:255',
-            'first_name'        =>  'max:255',
-            'second_name'       =>  'max:255',
-            'email'             =>  'max:255'
+            'username' => 'required|max:255|unique:users',
+            'first_name' => 'required|max:255',
+            'second_name' => 'required|max:255',
+            'email' => 'required|email|max:255|unique:users',
+            'password' => 'required|min:6'
         ];
 
         $validator = Validator::make($request->only(array_keys($rules)), $rules);
@@ -144,7 +141,9 @@ class ClientsController extends Controller
             'username' => $request->get('username'),
             'first_name' => $request->get('first_name'),
             'second_name' => $request->get('second_name'),
-            'email' => $request->get('email')
+            'role' => User::ROLE_USER,
+            'email' => $request->get('email'),
+            'password' => bcrypt($request->get('password'))
         ]);
 
         return redirect(route('admin.clients.index'))

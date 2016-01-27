@@ -89,10 +89,15 @@ Route::group(['prefix' => 'admin', 'namespace' => 'Admin'], function() {
                         'as'   => 'admin.clients.edit'
                     ]);
 
-                        get('/clients/{getClients}/destroy', [
-                            'uses'  =>  'ClientsController@destroy',
-                            'as'    =>  'admin.clients.destroy'
+                        post('/clients/{getClients}/update', [
+                            'uses' => 'ClientsController@update',
+                            'as'   => 'admin.clients.update'
                         ]);
+
+                            get('/clients/{getClients}/destroy', [
+                                'uses'  =>  'ClientsController@destroy',
+                                'as'    =>  'admin.clients.destroy'
+                            ]);
 
         // GET MASTERS
         get('/masters', [

@@ -80,8 +80,6 @@ class MastersController extends Controller
             'role' => User::ROLE_MASTER,
             'email' => $request->get('email'),
             'password' => bcrypt($request->get('password'))
-
-
         ]);
 
 
