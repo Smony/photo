@@ -93,6 +93,7 @@ class MastersController extends Controller
      * @param PageItem $pageSlide
      * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
      */
+
     public function edit(PageItem $pageSlide)
     {
         return view('admin.page-slides.edit', [

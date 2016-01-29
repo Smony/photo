@@ -95,6 +95,15 @@ class ClientsController extends Controller
      * @param User $getClients
      * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
      */
+    public function edit($getClients)
+    {
+        dd($getClients);
+
+        return view('admin.clients.edit', [
+            'getClients'    =>  $getClients
+        ]);
+    }
+/*
     public function edit(User $getClients)
     {
         #dd($getClients);
@@ -103,7 +112,7 @@ class ClientsController extends Controller
             'getClients'    =>  $getClients
         ]);
     }
-
+*/
 
     /**
      * Update user
