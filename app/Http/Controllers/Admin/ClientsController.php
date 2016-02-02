@@ -97,7 +97,11 @@ class ClientsController extends Controller
      */
     public function edit($getClients)
     {
-        dd($getClients);
+        #dd($getClients);
+
+
+        #editClient($getClients);
+
 
         return view('admin.clients.edit', [
             'getClients'    =>  $getClients

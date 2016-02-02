@@ -66,6 +66,8 @@ Route::group(['prefix' => 'admin', 'namespace' => 'Admin'], function() {
             'as'    =>  'admin.index.index'
         ]);
 
+
+
         //===================================================
 
         // GET CLIENTS

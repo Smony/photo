@@ -54,8 +54,7 @@ class User extends Model implements AuthenticatableContract,
      *
      * @return bool
      */
-    public function isAdmin()
-    {
+    public function isAdmin(){
         return $this->getAttribute('role') == self::ROLE_ADMIN;
     }
 
@@ -76,7 +75,7 @@ class User extends Model implements AuthenticatableContract,
         return $getAdministrators;
     }
 
-    public  function editClient(User $id){
+    public function editClient(User $id){
 
         $edit = User::where('id', $id)
             ->update();
