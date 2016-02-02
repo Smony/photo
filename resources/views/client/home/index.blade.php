@@ -4,7 +4,7 @@
 
 <div class="container">
 	<div class="row">
-	template 1 {{ Auth::user() }}
+	user {{ Auth::user()->role }}
 	</div>
 </div>
 

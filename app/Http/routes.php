@@ -12,6 +12,15 @@ Route::group(['namespace' => 'Client'], function() {
     ]);
 });
 
+Route::group(['middleware' => 'guest'], function(){
+
+    get('/master', [
+        'uses' => 'Auth\AuthController@getLogin',
+        'us'    => 'client.auth.getLogin'
+    ]);
+
+});
+
 Route::group(['middleware' => 'guest'], function() {
     get('/auth/login', [
         'uses'  =>  'Auth\AuthController@getLogin',
@@ -39,6 +48,11 @@ Route::group(['middleware' => 'auth'], function() {
         get('/home', [
             'uses'  =>  'HomeController@index',
             'as'    =>  'client.home.index'
+        ]);
+
+        get('/master', [
+            'uses'  =>  'HomeController@index',
+            'as'    =>  'master.home.index'
         ]);
     });
 

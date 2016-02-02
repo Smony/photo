@@ -74,22 +74,22 @@ class User extends Model implements AuthenticatableContract,
 
         return $getAdministrators;
     }
-
-    public function editClient(User $id){
-
-        $edit = User::where('id', $id)
-            ->update();
-
-        return $edit;
-    }
-
     /*
-    public function deleteClient(User $id){
-        $delete = User::where('id', '=', $id)->delete();
+       public function editClient(User $id){
 
-        return $delete;
-    }
-    */
+           $edit = User::where('id', $id)
+               ->update();
+
+           return $edit;
+       }
+
+
+       public function deleteClient(User $id){
+           $delete = User::where('id', '=', $id)->delete();
+
+           return $delete;
+       }
+       */
 
     //========================== SCOPES ==========================
 

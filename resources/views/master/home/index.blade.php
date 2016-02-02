@@ -4,7 +4,7 @@
 
     <div class="container">
         <div class="row">
-            master template {{ Auth::user() }}
+            master {{ Auth::user() }}
         </div>
     </div>
 
